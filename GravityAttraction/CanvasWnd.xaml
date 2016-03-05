@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simulations.GravityAttraction"
         mc:Ignorable="d"
-        Title="GravityAttraction" Height="400" Width="650" WindowStartupLocation="CenterScreen">
+        Title="GravityAttraction" Height="400" Width="650" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid>
-        <Image x:Name="image" Stretch="Fill" OpacityMask="Black"/>
+        <StackPanel Name="ImgContainer" Margin="0,0,0,0">
+            <Image Name="ImgView" Stretch="Fill" />
+        </StackPanel>
     </Grid>
 </Window>

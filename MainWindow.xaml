@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simulations"
         mc:Ignorable="d"
-        Title="NaturalSimulations" Height="251.856" Width="390.052" WindowStartupLocation="CenterScreen">
+        Title="Natural Simulations" Height="300" Width="400" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" >
     <Grid>
         <Button x:Name="button" Content="GravityAttraction" Click="Button_OnClick" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="106" Height="26" Background="LightSteelBlue"/>
 

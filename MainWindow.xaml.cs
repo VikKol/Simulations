@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading;
+using System.Windows;
 
 namespace Simulations
 {
@@ -16,6 +17,12 @@ namespace Simulations
         {
             var wnd = new GravityAttraction.CanvasWnd();
             wnd.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var wnd = new GravityAttraction.CanvasWnd();
+            wnd.Show();
         }
     }
 }
