@@ -15,13 +15,13 @@ namespace Simulations
 
         private void Button_OnClick(object sender, RoutedEventArgs e)
         {
-            var wnd = new GravityAttraction.CanvasWnd();
+            var wnd = new GravityAttraction.SolarSystem();
             wnd.ShowDialog();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var wnd = new GravityAttraction.CanvasWnd();
+            var wnd = new GravityAttraction.SolarSystem();
             wnd.Show();
         }
     }

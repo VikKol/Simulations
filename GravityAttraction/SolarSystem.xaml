@@ -1,11 +1,11 @@
-﻿<Window x:Class="Simulations.GravityAttraction.CanvasWnd"
+﻿<Window x:Class="Simulations.GravityAttraction.SolarSystem"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simulations.GravityAttraction"
         mc:Ignorable="d"
-        Title="GravityAttraction" Height="400" Width="650" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized">
+        Title="SolarSystem" Height="400" Width="650" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" WindowState="Maximized">
     <Grid>
         <StackPanel Name="ImgContainer" Margin="0,0,0,0">
             <Image Name="ImgView" Stretch="Fill" />

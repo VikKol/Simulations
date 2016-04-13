@@ -1,4 +1,5 @@
 ﻿using System;
+using SharpDX;
 
 namespace Simulations.Common
 {
@@ -6,9 +7,10 @@ namespace Simulations.Common
     {
         private static readonly Random rand = new Random();
 
-        public static int GetRandomColor()
+        public static Color GetRandomColor()
         {
-            return (int)(0xFF010101 | (uint)rand.Next(0xFFFFFF));
+            var rcol = (int)(0xFF010101 | (uint)rand.Next(0xFFFFFF));
+            return Color.FromAbgr(rcol);
         }
     }
 }
