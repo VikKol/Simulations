@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Graphics3D;
@@ -12,7 +13,7 @@ namespace Simulations.GravityAttraction
     /// <summary>
     /// Interaction logic for SolarSystem.xaml
     /// </summary>
-    public partial class SolarSystem : Window
+    public partial class SolarSystem : Page
     {
         int width;
         int height;
@@ -32,7 +33,7 @@ namespace Simulations.GravityAttraction
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             width = (int)this.ImgContainer.ActualWidth;
             height = (int)this.ImgContainer.ActualHeight;
@@ -76,5 +77,7 @@ namespace Simulations.GravityAttraction
             device.Render(meshes);
             device.Present();
         }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e) => CompositionTarget.Rendering -= Draw;
     }
 }

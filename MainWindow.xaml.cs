@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Simulations
 {
@@ -13,16 +12,21 @@ namespace Simulations
             InitializeComponent();
         }
 
-        private void Button_OnClick(object sender, RoutedEventArgs e)
+        private void SolarSystemSwitch_Checked(object sender, RoutedEventArgs e)
         {
-            var wnd = new GravityAttraction.SolarSystem();
-            wnd.ShowDialog();
+            if(frameContent != null)
+                frameContent.Content = new GravityAttraction.SolarSystem();
+        }
+
+        private void ParticleSystemSwitch_Checked(object sender, RoutedEventArgs e)
+        {
+            if(frameContent != null)
+                frameContent.Content = new ParticleSystem.ParticleSystem();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            var wnd = new GravityAttraction.SolarSystem();
-            wnd.Show();
+            frameContent.Content = new GravityAttraction.SolarSystem();
         }
     }
 }
