@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Graphics3D;
+using SharpDX;
 
 namespace Simulations.ParticleSystem
 {
@@ -20,9 +12,31 @@ namespace Simulations.ParticleSystem
     /// </summary>
     public partial class ParticleSystem : Page
     {
+        int width;
+        int height;
+        private WriteableBitmap writeableBmp;
+
         public ParticleSystem()
         {
             InitializeComponent();
         }
+
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            width = (int)this.ImgContainer.ActualWidth;
+            height = (int)this.ImgContainer.ActualHeight;
+            writeableBmp = Graphics3D.BitmapFactory.Create(width, height);
+            this.ImgView.Source = writeableBmp;
+
+
+
+            CompositionTarget.Rendering += Draw;
+        }
+
+        private void Draw(object sender, EventArgs e)
+        {
+        }
+
+        private void Page_Unloaded(object sender, System.Windows.RoutedEventArgs e) => CompositionTarget.Rendering -= Draw;
     }
 }

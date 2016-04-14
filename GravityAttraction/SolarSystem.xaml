@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        d:DesignHeight="480" d:DesignWidth="680"
         Title="SolarSystem" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
     <Grid>
         <StackPanel x:Name="ImgContainer" Margin="0,0,0,0">

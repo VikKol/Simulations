@@ -14,19 +14,26 @@ namespace Simulations
 
         private void SolarSystemSwitch_Checked(object sender, RoutedEventArgs e)
         {
-            if(frameContent != null)
-                frameContent.Content = new GravityAttraction.SolarSystem();
+            if (frameContent?.Content is GravityAttraction.SolarSystem)
+            {
+                return;
+            }
+            frameContent.Content = new GravityAttraction.SolarSystem();
         }
 
         private void ParticleSystemSwitch_Checked(object sender, RoutedEventArgs e)
         {
-            if(frameContent != null)
-                frameContent.Content = new ParticleSystem.ParticleSystem();
+            if (frameContent?.Content is ParticleSystem.ParticleSystem)
+            {
+                return;
+            }
+            frameContent.Content = new ParticleSystem.ParticleSystem();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            frameContent.Content = new GravityAttraction.SolarSystem();
+            frameContent.Content = new ParticleSystem.ParticleSystem();
+            ParticleSystemSwitch.IsChecked = true;
         }
     }
 }

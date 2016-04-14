@@ -12,9 +12,20 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <RadioButton x:Name="SolarSystemSwitch" Margin="0,8,0,0" HorizontalAlignment="Center" IsChecked="True" Content="Solar System" Checked="SolarSystemSwitch_Checked"></RadioButton>
-            <RadioButton x:Name="ParticleSystemSwitch" Margin="10,8,0,0" IsChecked="False" Content="Particle System" Checked="ParticleSystemSwitch_Checked"></RadioButton>
+            <RadioButton x:Name="SolarSystemSwitch" 
+                         Margin="0,8,0,0" 
+                         HorizontalAlignment="Center" 
+                         IsChecked="False" 
+                         Content="Solar System" 
+                         Checked="SolarSystemSwitch_Checked">
+            </RadioButton>
+            <RadioButton x:Name="ParticleSystemSwitch" 
+                         Margin="10,8,0,0" 
+                         IsChecked="False" 
+                         Content="Particle System" 
+                         Checked="ParticleSystemSwitch_Checked">
+            </RadioButton>
         </StackPanel>
-        <Frame x:Name="frameContent" Grid.Row="1"></Frame>
+        <Frame x:Name="frameContent" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
