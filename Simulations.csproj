@@ -86,7 +86,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Common\ExtensionMethods.cs" />
+    <Compile Include="Common\DrawingExtensions.cs" />
     <Compile Include="Common\Helpers.cs" />
     <Compile Include="GravityAttraction\Body.cs" />
     <Compile Include="GravityAttraction\SolarSystem.xaml.cs">

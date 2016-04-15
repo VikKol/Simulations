@@ -2,8 +2,10 @@
 {
     public static class Constants
     {
-        public const float G = 0.01f;
-
         public const int SunMass = 20;
+
+        public const float Gravity = 0.01f;
+
+        public const float RepelForce = 1000;
     }
 }

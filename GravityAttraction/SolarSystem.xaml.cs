@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,6 +29,21 @@ namespace Simulations.GravityAttraction
         private static Body Sun;
         private static Body[] Planets;
 
+        private static Dictionary<string, KeyValuePair<int, SharpDX.Color>> colors = 
+            new Dictionary<string, KeyValuePair<int, SharpDX.Color>>
+            {
+                { "Mercury", new KeyValuePair<int, SharpDX.Color>(4, SharpDX.Color.DarkGray) },
+                { "Venus", new KeyValuePair<int, SharpDX.Color>(6, SharpDX.Color.DarkOrange) },
+                { "Earth", new KeyValuePair<int, SharpDX.Color>(8, new SharpDX.Color(0x0A, 0xFA, 0xC2)) },
+                { "Mars", new KeyValuePair<int, SharpDX.Color>(7, new SharpDX.Color(0xD6, 0x56, 0x2F)) },
+                { "Jupiter", new KeyValuePair<int, SharpDX.Color>(10, new SharpDX.Color(0xFF, 0xAD, 0x5C)) },
+                { "Saturn", new KeyValuePair<int, SharpDX.Color>(9, new SharpDX.Color(0xFF, 0xC2, 0x85)) },
+                { "Torus", new KeyValuePair<int, SharpDX.Color>(9, SharpDX.Color.Silver) },
+                { "Uranus", new KeyValuePair<int, SharpDX.Color>(7, new SharpDX.Color(0, 0xBF, 0xFF)) },
+                { "Neptune", new KeyValuePair<int, SharpDX.Color>(6, new SharpDX.Color(0, 0x80, 0xFF)) },
+                { "Pluto", new KeyValuePair<int, SharpDX.Color>(2, SharpDX.Color.Silver) },
+            };
+
         public SolarSystem()
         {
             InitializeComponent();
@@ -54,10 +70,10 @@ namespace Simulations.GravityAttraction
             Planets = new Body[planetMeshes.Length];
             for (int i = 0; i < Planets.Length; i++)
             {
-                //TODO: make mass realistic, add random speed.
-                var mass = rand.Next(5, 10);
-                Planets[i] = new Body(mass, new Vector3(-0.05f, 0, 0.08f), planetMeshes[i]);
-                Planets[i].Color = Helpers.GetRandomColor();
+                var mass = colors[meshes[i].Name].Key;
+                var velocity = new Vector3(-0.03f, 0, 0.08f);
+                Planets[i] = new Body(mass, velocity, planetMeshes[i]);
+                Planets[i].Color = colors[meshes[i].Name].Value;
             }
 
             CompositionTarget.Rendering += Draw;

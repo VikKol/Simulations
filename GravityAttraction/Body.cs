@@ -14,6 +14,8 @@ namespace Simulations.GravityAttraction
             set { mesh.Color = value; }
         }
 
+        public string Name { get { return mesh.Name; } }
+
         private Vector3 velocity;
         private Vector3 acceleration;
 
@@ -41,7 +43,7 @@ namespace Simulations.GravityAttraction
             distance = distance.Constrain(20.0f, 50.0f);
             
             force.Normalize();
-            var strength = (Constants.G * this.Mass * obj.Mass) / (distance * distance);
+            var strength = (Constants.Gravity * this.Mass * obj.Mass) / (distance * distance);
             
             return Vector3.Multiply(force, strength);
         }

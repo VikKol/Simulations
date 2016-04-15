@@ -32,8 +32,8 @@ namespace Simulations
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            frameContent.Content = new ParticleSystem.ParticleSystem();
-            ParticleSystemSwitch.IsChecked = true;
+            frameContent.Content = new GravityAttraction.SolarSystem();
+            SolarSystemSwitch.IsChecked = true;
         }
     }
 }
